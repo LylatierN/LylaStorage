@@ -23,14 +23,15 @@ export default function OpenhouseSlide() {
       .then((data) => setSlides(data))
       .catch((err) => console.error('Error loading slides:', err));
 
-    pusherRef.current = getPusherClient();
-    const channel = pusherRef.current.subscribe('slides-channel');
-
-    return () => { channel.unsubscribe(); };
+    if (process.env.NEXT_PUBLIC_PUSHER_KEY) {
+      pusherRef.current = getPusherClient();
+      const channel = pusherRef.current.subscribe('slides-channel');
+      return () => { channel.unsubscribe(); };
+    }
   }, []);
 
   useEffect(() => {
-    if (!pusherRef.current) return;
+    if (!pusherRef.current || !process.env.NEXT_PUBLIC_PUSHER_KEY) return;
     const channel = pusherRef.current.subscribe('slides-channel');
 
     const handleSlideChange = (data: { action: string }) => {
