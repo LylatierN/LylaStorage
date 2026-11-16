@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-import Link from 'next/link';
 
 type Tab = 'text' | 'wifi' | 'email' | 'phone' | 'sms';
 type EcLevel = 'L' | 'M' | 'Q' | 'H';
@@ -355,13 +354,6 @@ export default function QRMaker() {
 
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <header className="sticky top-0 z-10 bg-[var(--background)] border-b border-[var(--border)] px-6 h-14 flex items-center justify-between">
-        <Link href="/" className="font-semibold text-sm hover:opacity-70 transition-opacity">
-          ← Lylatier
-        </Link>
-        <span className="text-sm font-medium">QR Maker</span>
-      </header>
-
       <main className="max-w-5xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Input Panel */}
         <section className="space-y-5">
