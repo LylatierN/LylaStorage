@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main className="min-h-screen px-6 py-14 max-w-3xl mx-auto">
       <header className="mb-12">
-        <h1>LyLatier</h1>
+        <h1 className="text-[36px]">LyLatier</h1>
         <p className="text-[var(--muted)]">A collection of small projects of a small developer.</p>
       </header>
 
