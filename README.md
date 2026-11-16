@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LylaStorage
+
+A personal portfolio site built with Next.js, showcasing small projects by [LylatierN](https://github.com/LylatierN).
+
+## Projects
+
+### QR Maker
+Generate QR codes for URLs, plain text, Wi-Fi, email, phone numbers, and SMS. Customize colors (including separate eye-module color), error correction level, and size. Download as PNG or SVG, or copy to clipboard.
+
+### KU Engineering Open House 2025
+Fullscreen slide presentation for the KU Faculty of Engineering Open House 2025. Covers CPE and SKE programs.
+
+Controls (on the slide page):
+- `→` or `Space` — next slide
+- `←` — previous slide
+- `Escape` — reset to idle
+- Click anywhere on idle screen — start
+- Click right half of a slide — next
+- Click left half of a slide — previous
+
+Optionally, control slides remotely from another device via `/openhouse/remote` (requires Pusher — see below).
+
+## Stack
+
+- [Next.js 15](https://nextjs.org) (App Router)
+- TypeScript
+- Tailwind CSS
+- [Pusher Channels](https://pusher.com) (optional, for remote slide control)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Remote Slide Control (Optional)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The `/openhouse/remote` page lets you control slides from a second device (e.g. your phone) in real time. This requires a free [Pusher](https://pusher.com) account.
 
-## Learn More
+Create a `.env.local` file at the project root:
 
-To learn more about Next.js, take a look at the following resources:
+```
+NEXT_PUBLIC_PUSHER_KEY=your_app_key
+NEXT_PUBLIC_PUSHER_CLUSTER=your_cluster
+PUSHER_APP_ID=your_app_id
+PUSHER_SECRET=your_secret
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See `.env.local.example` for a template. Without these variables, slides still work using keyboard and click controls.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed on [Vercel](https://vercel.com). To enable remote slide control on Vercel, add the same four environment variables under **Project Settings → Environment Variables**, then redeploy.
