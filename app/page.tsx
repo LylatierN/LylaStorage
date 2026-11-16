@@ -19,9 +19,8 @@ const projects = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen px-6 py-20 max-w-3xl mx-auto">
-      <header className="mb-16">
-        <h1 className="text-3xl font-semibold tracking-tight mb-2">Lylatier</h1>
+    <main className="min-h-screen px-6 py-14 max-w-3xl mx-auto">
+      <header className="mb-12">
         <p className="text-[var(--muted)]">A collection of small projects.</p>
       </header>
 
