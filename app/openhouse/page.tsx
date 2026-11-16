@@ -30,6 +30,22 @@ export default function OpenhouseSlide() {
   }, []);
 
   useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        if (isTransitioning) skipVideo();
+        else handleNext();
+      } else if (e.key === 'ArrowLeft') {
+        handlePrev();
+      } else if (e.key === 'Escape') {
+        handleReset();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [slides, currentSlide, isTransitioning, transitionType, nextSlideQueued]);
+
+  useEffect(() => {
     if (!pusherRef.current || !process.env.NEXT_PUBLIC_PUSHER_KEY) return;
     const channel = pusherRef.current.subscribe('slides-channel');
 
@@ -115,7 +131,7 @@ export default function OpenhouseSlide() {
 
   if (currentSlide === -1) {
     return (
-      <div className="relative w-screen h-screen overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex items-center justify-center">
+      <div className="relative w-screen h-screen overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex items-center justify-center" onClick={handleNext}>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-800/30 via-transparent to-transparent" />
         <div className="absolute top-20 left-20 w-20 h-20 border-4 border-amber-300/30 rounded-lg animate-float" />
         <div className="absolute top-40 right-32 w-16 h-16 border-4 border-blue-300/30 rounded-full animate-float-reverse" style={{ animationDelay: '1s' }} />
@@ -150,6 +166,9 @@ export default function OpenhouseSlide() {
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 flex items-center justify-center">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
+      {/* Click zones: left half = prev, right half = next */}
+      <div className="absolute inset-y-0 left-0 w-1/2 z-10 cursor-w-resize" onClick={handlePrev} />
+      <div className="absolute inset-y-0 right-0 w-1/2 z-10 cursor-e-resize" onClick={handleNext} />
       <div className="absolute top-8 right-8 z-20 bg-black/50 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
         <p className="text-white text-lg font-semibold">{currentSlide + 1} / {slides.length}</p>
       </div>
