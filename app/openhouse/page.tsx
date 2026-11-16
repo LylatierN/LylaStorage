@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { getPusherClient } from '@/lib/pusher';
 import type PusherClient from 'pusher-js';
 
@@ -117,7 +116,6 @@ export default function OpenhouseSlide() {
   if (currentSlide === -1) {
     return (
       <div className="relative w-screen h-screen overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 flex items-center justify-center">
-        <Link href="/" className="absolute top-4 left-4 z-20 text-white/60 hover:text-white text-sm transition-colors">← Back</Link>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-800/30 via-transparent to-transparent" />
         <div className="absolute top-20 left-20 w-20 h-20 border-4 border-amber-300/30 rounded-lg animate-float" />
         <div className="absolute top-40 right-32 w-16 h-16 border-4 border-blue-300/30 rounded-full animate-float-reverse" style={{ animationDelay: '1s' }} />
@@ -145,16 +143,12 @@ export default function OpenhouseSlide() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-          <Link href="/openhouse/remote" className="text-white/60 hover:text-white text-sm transition-colors">Remote →</Link>
-        </div>
       </div>
     );
   }
 
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 flex items-center justify-center">
-      <Link href="/" className="absolute top-4 left-4 z-20 text-white/60 hover:text-white text-sm transition-colors">← Back</Link>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
       <div className="absolute top-8 right-8 z-20 bg-black/50 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
         <p className="text-white text-lg font-semibold">{currentSlide + 1} / {slides.length}</p>
