@@ -1,0 +1,20 @@
+{
+  "name": "Nattanan Pimjaipong",
+  "subtitle": "Software & Knowledge Engineering · Kasetsart University",
+  "contact": {
+    "location": "Bangkok, Thailand",
+    "phone": "+66 83 440 7116",
+    "email": "nattanan.pimj@gmail.com"
+  },
+  "lastUpdate": "November 2026",
+  "skills": [
+    { "label": "Languages", "value": "Python · C · C++ · JavaScript" },
+    { "label": "Web",       "value": "HTML · CSS · React · ExpressJS · Django" },
+    { "label": "Databases", "value": "MySQL · MongoDB" },
+    { "label": "Tools",     "value": "Google Workspace · Microsoft Office · Canva · Figma" }
+  ],
+  "languages": [
+    { "name": "Thai",    "level": "Native" },
+    { "name": "English", "level": "Advanced · IELTS 6.5" }
+  ]
+}
