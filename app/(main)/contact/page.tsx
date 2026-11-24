@@ -56,6 +56,19 @@ export default function Contact() {
         </a>
 
         <a
+          href="https://bestkru.com/118125"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-6 py-5 hover:border-[var(--foreground)] transition-colors group"
+        >
+          <span className="text-lg">📚</span>
+          <div>
+            <p className="font-medium group-hover:underline underline-offset-2">BestKru</p>
+            <p className="text-sm text-[var(--muted)]">Tutoring profile</p>
+          </div>
+        </a>
+
+        <a
           href="https://twitter.com/lylatier"
           target="_blank"
           rel="noopener noreferrer"
