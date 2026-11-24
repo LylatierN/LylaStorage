@@ -12,6 +12,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
               Home
             </Link>
+            <Link href="/resume" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+              Resume
+            </Link>
             <Link href="/contact" className="text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
               Contact me
             </Link>

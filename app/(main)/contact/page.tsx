@@ -8,6 +8,17 @@ export default function Contact() {
 
       <section className="space-y-4">
         <a
+          href="/resume"
+          className="flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-6 py-5 hover:border-[var(--foreground)] transition-colors group"
+        >
+          <span className="text-lg">📄</span>
+          <div>
+            <p className="font-medium group-hover:underline underline-offset-2">Resume</p>
+            <p className="text-sm text-[var(--muted)]">View my resume</p>
+          </div>
+        </a>
+
+        <a
           href="mailto:lylatiern@gmail.com"
           className="flex items-center gap-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-6 py-5 hover:border-[var(--foreground)] transition-colors group"
         >
