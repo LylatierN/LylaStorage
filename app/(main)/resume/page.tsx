@@ -3,7 +3,7 @@
 export default function Resume() {
   return (
     <main className="min-h-screen px-6 py-14 max-w-3xl mx-auto">
-      <p className="text-xs text-[var(--muted)] mb-6">Last update: November 2025</p>
+      <p className="text-xs text-[var(--muted)] mb-6">Last update: November 2026</p>
 
       <header className="mb-10 flex items-start justify-between gap-4 flex-wrap">
         <div>
@@ -32,18 +32,6 @@ export default function Resume() {
         <div className="space-y-6">
           <div>
             <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
-              <p className="font-medium">Computer Programming TA</p>
-              <span className="text-xs text-[var(--muted)]">Class of 2025</span>
-            </div>
-            <ul className="text-sm text-[var(--muted)] space-y-1 list-disc list-inside">
-              <li>Explained programming concepts to freshmen with no prior programming experience.</li>
-              <li>Acted as first-line problem solver before escalating to professors.</li>
-              <li>Provided macOS-specific technical support as the only MacOS TA.</li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
               <p className="font-medium">Discrete and Linear Algebra TA</p>
               <span className="text-xs text-[var(--muted)]">Class of 2026</span>
             </div>
@@ -60,6 +48,40 @@ export default function Resume() {
             <ul className="text-sm text-[var(--muted)] space-y-1 list-disc list-inside">
               <li>Managed equipment procurement, resource allocation, and spatial layouts across 3 zones with zero operational downtime.</li>
               <li>Collaborated with faculty advisors, university administration, and 10+ student sub-teams to align timelines, safety compliance, and budget.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
+              <div>
+                <p className="font-medium">Head of Art Team — Let me try 6</p>
+                <p className="text-xs text-[var(--muted)]">Visual Direction & Team Leadership · 2026</p>
+              </div>
+              <a
+                href="https://www.instagram.com/lmt_camp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-[var(--muted)] hover:text-[var(--foreground)] underline underline-offset-2 transition-colors print:hidden"
+              >
+                Instagram ↗
+              </a>
+            </div>
+            <ul className="text-sm text-[var(--muted)] space-y-1 list-disc list-inside">
+              <li>Led creative direction and visual identity, designing promotional graphics, social media campaigns, and event materials across Instagram/Facebook.</li>
+              <li>Managed a team of 6 student designers, establishing design templates in Canva/Figma to maintain brand consistency under tight deadlines.</li>
+              <li>Produced PR posts and promotional assets that boosted event awareness and student participation across high schools.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="flex items-start justify-between gap-2 flex-wrap mb-1">
+              <p className="font-medium">Computer Programming TA</p>
+              <span className="text-xs text-[var(--muted)]">Class of 2025</span>
+            </div>
+            <ul className="text-sm text-[var(--muted)] space-y-1 list-disc list-inside">
+              <li>Explained programming concepts to freshmen with no prior programming experience.</li>
+              <li>Acted as first-line problem solver before escalating to professors.</li>
+              <li>Provided macOS-specific technical support as the only MacOS TA.</li>
             </ul>
           </div>
         </div>
@@ -178,10 +200,10 @@ export default function Resume() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
           {[
-            { label: "Languages", value: "Python · C · C++" },
-            { label: "Web", value: "HTML · CSS · JavaScript · React · ExpressJS · Django" },
+            { label: "Languages", value: "Python · C · C++ · JavaScript" },
+            { label: "Web", value: "HTML · CSS · React · ExpressJS · Django" },
             { label: "Databases", value: "MySQL · MongoDB" },
-            { label: "Tools", value: "Google Workspace · Microsoft Office · Canva" },
+            { label: "Tools", value: "Google Workspace · Microsoft Office · Canva · Figma" },
           ].map(({ label, value }) => (
             <div key={label} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3">
               <p className="text-xs text-[var(--muted)] mb-1">{label}</p>
