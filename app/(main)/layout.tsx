@@ -22,6 +22,14 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         </div>
       </nav>
       {children}
+      <footer className="border-t border-[var(--border)] py-6 mt-8">
+        <div className="max-w-3xl mx-auto px-6 text-center text-xs text-[var(--muted)]">
+          <p>© {new Date().getFullYear()} Lylatier · Thanks for visiting</p>
+          <p className="mt-1 opacity-60">
+            Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+          </p>
+        </div>
+      </footer>
     </>
   );
 }
