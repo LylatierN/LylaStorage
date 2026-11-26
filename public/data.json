@@ -85,6 +85,11 @@
     },
     {
         "id": 17,
+        "title": "LMT Camp",
+        "image": "/syl/9.png"
+    },
+    {
+        "id": 18,
         "title": "QnA Session",
         "subtitle": "ถ้าไม่มีข้อสงสัยแล้วก็ IT's TIMEEEEEE"
     }
